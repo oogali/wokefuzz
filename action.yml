@@ -2,10 +2,12 @@ name: 'Run woke fuzzing tests'
 description: ''
 author: 'oogali'
 inputs:
-  version:
-    description: ''
-    required: false
-
   working-directory:
     description: ''
     required: false
+
+runs:
+  using: 'docker'
+  image: Dockerfile
+  args:
+    - ${{ inputs.working-directory }}
